@@ -19,8 +19,6 @@
 			$pdf->SetMargins(15,0);
 			$pdf->SetTopMargin(30);
 			if($date!=null){
-				$pdf->SetFont('Arial','B',12);
-				$pdf->Cell(180,7,longdate_indo($date),0,1,'C');
 				$this->db->order_by('tgl_diterima', 'ASC');
 				$undangan = $this->db->get_where('undangan', ["tgl_diterima" => $date])->result();
 			}else{

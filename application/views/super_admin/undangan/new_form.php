@@ -28,8 +28,9 @@
 					<div class="card-body">
 						<form action="<?php base_url('super_admin/undangan/add') ?>" method="POST" enctype="multipart/form-data">
 							<div class="form-group">
+								<?php $i = $jumlah+1; ?>
 								<label for="no">No*</label>
-								<input class="form-control <?php echo form_error('no') ? 'is-invalid':''?>" type="text" name="no" placeholder="Nomor">
+								<input class="form-control <?php echo form_error('no') ? 'is-invalid':''?>" type="text" name="no" placeholder="Nomor" value="<?php echo $i; ?>">
 								<div class="invalid-feedback">
 									<?php echo form_error('no') ?>
 								</div>

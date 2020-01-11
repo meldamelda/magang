@@ -12,10 +12,36 @@
 				<?php $this->load->view("super_admin/_partial/breadcrumb.php") ?>
 				<div class="card mb-3">
 					<div class="card-header">
-						Laporan Harian
+						Cetak Laporan
 					</div>
 					<div class="card-body">
-						<a style="text-decoration: none;" href="<?php echo site_url('super_admin/lap_surat_masuk/index/'.date('yy-m-d')); ?>">Surat Masuk</a>
+						<label for="pilih">Pilih Laporan</label>
+						<select class="form-control <?php echo form_error('awal') ? 'is-invalid':''?>" name="pilih">
+							<option value="surat_masuk">Surat Masuk</option>
+							<option value="surat_keluar">Surat Keluar</option>
+							<option value="undangan">Undangan</option>
+							<option value="agenda">Agenda</option>
+							<option value="logactivity">Log Aktifitas</option>
+							<option value="login">Login</option>
+						</select>
+						<div class="invalid-feedback">
+							<?php echo form_error('pilih') ?>
+						</div>
+						<br>
+						<label for="awal">Dari</label>
+						<input class="form-control <?php echo form_error('awal') ? 'is-invalid':''?>" type="date" name="awal">
+						<div class="invalid-feedback">
+							<?php echo form_error('awal') ?>
+						</div>
+						<br>
+						<label for="akhir">Ke</label>
+						<input class="form-control <?php echo form_error('akhir') ? 'is-invalid':''?>" type="date" name="akhir">
+						<div class="invalid-feedback">
+							<?php echo form_error('akhir') ?>
+						</div>
+						<br>
+						<a class="btn btn-melda3" href="<?php echo site_url() ?>">CETAK</a>
+						<!--<a style="text-decoration: none;" href="<?php echo site_url('super_admin/lap_surat_masuk/index/'.date('yy-m-d')); ?>">Surat Masuk</a>
 						<br>
 						<a style="text-decoration: none;" href="<?php echo site_url('super_admin/lap_surat_keluar/index/'.date('yy-m-d')); ?>">Surat Keluar</a>
 						<br>
@@ -26,26 +52,7 @@
 						<a style="text-decoration: none;" href="<?php echo site_url('super_admin/lap_logactivity/index/'.date('yy-m-d')); ?>">Log Aktifitas</a>
 						<br>
 						<a style="text-decoration: none;" href="<?php echo site_url('super_admin/lap_login/index/'.date('yy-m-d')); ?>">Login</a>
-						<br>
-					</div>
-				</div>
-				<div class="card mb-3">
-					<div class="card-header">
-						Laporan
-					</div>
-					<div class="card-body">
-						<a style="text-decoration: none;" href="<?php echo site_url('super_admin/lap_surat_masuk'); ?>">Surat Masuk</a>
-						<br>
-						<a style="text-decoration: none;" href="<?php echo site_url('super_admin/lap_surat_keluar'); ?>">Surat Keluar</a>
-						<br>
-						<a style="text-decoration: none;" href="<?php echo site_url('super_admin/lap_undangan'); ?>">Undangan</a>
-						<br>
-						<a style="text-decoration: none;" href="<?php echo site_url('super_admin/lap_agenda'); ?>">Agenda</a>
-						<br>
-						<a style="text-decoration: none;" href="<?php echo site_url('super_admin/lap_logactivity'); ?>">Aktifitas Log</a>
-						<br>
-						<a style="text-decoration: none;" href="<?php echo site_url('super_admin/lap_login'); ?>">Login</a>
-						<br>
+						<br>-->
 					</div>
 				</div>
 			</div>

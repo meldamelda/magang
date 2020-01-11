@@ -28,10 +28,12 @@
 	<div class="container">
 		<div class="card card-login bg-dark mx-auto mt-5">
 			<div class="card-header bg-melda1">
-				LOGIN
-				<?php if(isset($error)) { echo $error; }; ?>
+				<img class="logo2" src="<?php echo base_url('/images/logo2.png') ?>">
 			</div>
-			<div class="card-body bg-melda1">
+			<div class="card-body bg-melda1 mt-2">
+				<h5 class="putih" align="center">SIGN IN</h5>
+				<?php if(isset($error)) { echo $error; }; ?>
+				<br>
 				<form method="POST" action="<?php echo base_url() ?>index.php">
 					<div class="form-group">
 						<div class="form-label-group">

@@ -20,6 +20,7 @@
 		}
 
 		public function add(){
+			$data["jumlah"] = $this->undangan_model->getAll()->num_rows();
 			$undangan = $this->undangan_model;
 			$validation = $this->form_validation;
 			$validation->set_rules($undangan->rules());
@@ -29,7 +30,7 @@
 				$this->session->set_flashdata('success', 'Berhasil disimpan');
 			}
 
-			$this->load->view("super_admin/undangan/new_form");
+			$this->load->view("super_admin/undangan/new_form", $data);
 		}
 
 		public function edit($id = null){
